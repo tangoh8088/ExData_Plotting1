@@ -17,10 +17,10 @@ rm(dat)
 datsub$DateTime <- as.POSIXct(paste(as.Date(datsub$Date), datsub$Time))
 
 ##Construct Line Graph and Legend
-plot(datsub$Sub_metering_1~datsub$DateTime, type = "l", ylab = "Energy sub metering")
+plot(datsub$Sub_metering_1~datsub$DateTime, type = "l", ylab = "Energy sub metering", xlab = "")
 lines(datsub$Sub_metering_2~datsub$DateTime, type = "l", col = "red")
 lines(datsub$Sub_metering_3~datsub$DateTime, type = "l", col = "blue")
-legend("topright", lwd = 1, col = c("black", "red", "blue"), legend = c("Sub_meterting_1", "Sub_metering_2", "Sub_meterting_3"))
+legend("topright", lwd = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 ##Copy to PNG file
 dev.copy(png, "plot3.png", height = 480, width = 480)

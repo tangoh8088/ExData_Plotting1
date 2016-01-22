@@ -21,10 +21,10 @@ par(mfrow = c(2,2), mar = c(4,4,2,1))
 with (datsub, { 
       plot(Global_active_power~DateTime, type = "l", ylab = "Global Active Power", xlab = "")
       plot(Voltage~DateTime, type = "l", ylab = "Voltage", xlab = "datetime")
-      plot(datsub$Sub_metering_1~datsub$DateTime, type = "l", ylab = "Energy sub metering")
+      plot(datsub$Sub_metering_1~datsub$DateTime, type = "l", ylab = "Energy sub metering",xlab = "")
       lines(datsub$Sub_metering_2~datsub$DateTime, type = "l", col = "red")
       lines(datsub$Sub_metering_3~datsub$DateTime, type = "l", col = "blue")
-      legend("topright", lwd = 1, col = c("black", "red", "blue"), bty = "n", legend = c("Sub_meterting_1", "Sub_metering_2", "Sub_meterting_3"))
+      legend("topright", lwd = 1, col = c("black", "red", "blue"), bty = "n", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
       plot(Global_reactive_power~DateTime, type = "l", ylab = "Global_reactive_power", xlab = "datetime")
       })
 
