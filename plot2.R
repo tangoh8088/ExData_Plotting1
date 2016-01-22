@@ -16,10 +16,9 @@ rm(dat)
 ##Convert Date and Time
 datsub$DateTime <- as.POSIXct(paste(as.Date(datsub$Date), datsub$Time))
 
-##Construct line graph
-plot(datsub$Global_active_power~datsub$DateTime, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
+##Construct line graph as PNG file
+png(filename = "plot2.png", width = 480, height = 480, units = "px", bg = "white")
 
-##Copy to PNG file
-dev.copy(png, "plot2.png", height = 480, width = 480)
+plot(datsub$Global_active_power~datsub$DateTime, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
 
 dev.off()

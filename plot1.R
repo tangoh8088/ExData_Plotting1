@@ -16,10 +16,9 @@ rm(dat)
 ##Convert Date and Time
 datsub$DateTime <- as.POSIXct(paste(as.Date(datsub$Date), datsub$Time))
 
-##Construct histogram
-hist(datsub$Global_active_power, xlab = "Global Active Power", col = "red", main = "Global Active Power")
+##Construct histogram as PNG file
+png(filename = "plot1.png", width = 480, height = 480, units = "px", bg = "white")
 
-##Copy to PNG file
-dev.copy(png, "plot1.png", height = 480, width = 480)
+hist(datsub$Global_active_power, xlab = "Global Active Power (kilowatts)", col = "red", main = "Global Active Power")
 
 dev.off()
