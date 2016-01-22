@@ -16,8 +16,11 @@ rm(dat)
 ##Convert Date and Time
 datsub$DateTime <- as.POSIXct(paste(as.Date(datsub$Date), datsub$Time))
 
-##Construct 4 graphs in plot
+##Construct 4 graphs in plot in PNG
+png(filename = "plot4.png", width = 480, height = 480, units = "px", bg = "white")
+
 par(mfrow = c(2,2), mar = c(4,4,2,1))
+
 with (datsub, { 
       plot(Global_active_power~DateTime, type = "l", ylab = "Global Active Power", xlab = "")
       plot(Voltage~DateTime, type = "l", ylab = "Voltage", xlab = "datetime")
@@ -27,8 +30,5 @@ with (datsub, {
       legend("topright", lwd = 1, col = c("black", "red", "blue"), bty = "n", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
       plot(Global_reactive_power~DateTime, type = "l", ylab = "Global_reactive_power", xlab = "datetime")
       })
-
-##Copy to PNG file
-dev.copy(png, "plot4.png", height = 480, width = 480)
 
 dev.off()
